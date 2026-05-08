@@ -22,45 +22,48 @@
             min-height: 100vh;
         }
 
-        .container { width: 100%; max-width: 400px; padding: 40px 20px; }
+        .container { width: 100%; max-width: 400px; padding: 30px 20px; }
 
-        /* تنسيق الشعار باستخدام ملفك الخاص */
+        /* تنسيق الشعار لضمان الملء الصحيح للمساحة */
         .logo-container {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            height: 200px; /* تحديد ارتفاع ثابت لمنع القفز */
+            align-items: center;
         }
         .main-logo {
-            width: 200px; /* حجم متناسق للشعار */
-            height: auto;
-            margin: 0 auto;
-            /* تم إزالة الخلفيات البيضاء والدوائر ليكون التركيز على شعارك فقط */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
-        .title-section { text-align: center; margin-bottom: 40px; }
-        .title-section h1 { font-size: 1.4rem; font-weight: 900; color: #ffffff; }
-        .title-section p { font-size: 0.65rem; color: #444; letter-spacing: 3px; text-transform: uppercase; }
+        .title-section { text-align: center; margin-bottom: 35px; }
+        .title-section h1 { font-size: 1.6rem; font-weight: 900; margin-bottom: 2px; }
+        .title-section p { font-size: 0.6rem; color: #444; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* أزرار الهوية الجديدة - رسمية وبسيطة */
+        /* الأزرار الرسمية */
         .official-link {
             background: #ffffff;
             color: #000000;
             font-weight: 900;
             padding: 18px;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
             display: block;
             text-decoration: none;
             margin-bottom: 15px;
-            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(255,255,255,0.05);
         }
 
         .secondary-link {
-            background: rgba(255, 255, 255, 0.05);
+            background: #111;
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #222;
             font-weight: 700;
             padding: 16px;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
             display: block;
             text-decoration: none;
@@ -71,28 +74,25 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin-top: 10px;
         }
         .grid-box {
-            background: #0a0a0a;
+            background: #080808;
             border: 1px solid #151515;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: center;
             text-decoration: none;
             color: #fff;
-            transition: 0.2s;
         }
-        .grid-box:active { transform: scale(0.95); }
-        .grid-box i { color: #004d00; margin-bottom: 8px; font-size: 1.2rem; }
-        .grid-box span { display: block; font-size: 0.8rem; font-weight: 700; }
+        .grid-box i { color: #15803d; margin-bottom: 8px; font-size: 1.2rem; }
+        .grid-box span { display: block; font-size: 0.8rem; font-weight: 900; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="logo-container" data-aos="zoom-in">
-            <img src="Picsart_24-12-16_17-48-42-061.png" 
+            <img src="unnamed.png" 
                  alt="شعار رئاسة الحرس الملكي" 
                  class="main-logo">
         </div>
@@ -105,7 +105,7 @@
         <a href="portal.html" class="official-link" data-aos="fade-up" data-aos-delay="100">بوابة المنسوبين الموحدة</a>
         
         <a href="regulations.html" class="secondary-link" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-file-shield ml-2"></i> الأنظمة واللوائح الإدارية
+            <i class="fa-solid fa-file-shield ml-2 text-green-700"></i> الأنظمة واللوائح الإدارية
         </a>
 
         <div class="info-grid">
