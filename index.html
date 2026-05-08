@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة رئاسة الحرس الملكي | R.G</title>
+    <title>بوابة رئاسة الحرس الملكي | R.G.H</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,134 +13,142 @@
     <style>
         body { 
             font-family: 'Cairo', sans-serif; 
-            /* خلفية بتدرج الأخضر العسكري والأسود */
-            background: linear-gradient(to bottom, #001a00 0%, #000000 70%, #1a1a1a 100%);
-            background-attachment: fixed;
+            background: #050505; /* أسود ملكي مطفي */
             min-height: 100vh;
             margin: 0;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
         }
 
-        .container { width: 100%; max-width: 400px; padding: 20px; padding-top: 30px; }
+        /* لمسة علوية خضراء رسمية */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; width: 100%; height: 5px;
+            background: #004d00;
+        }
+
+        .container { width: 100%; max-width: 400px; padding: 30px 20px; }
 
         /* شعار الحرس الملكي */
-        .logo-wrapper { text-align: center; margin-bottom: 25px; }
-        .main-logo {
-            width: 150px;
-            height: auto;
-            margin: 0 auto;
-            filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.2));
+        .logo-wrapper { text-align: center; margin-bottom: 40px; }
+        .main-logo { 
+            width: 160px; 
+            margin: 0 auto; 
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.1));
         }
 
-        /* خانة متميز الدورة */
-        .distinguished-card {
-            background: rgba(0, 40, 0, 0.4);
-            border: 2px solid #ffd700;
-            border-radius: 20px;
+        .header-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header-title h1 { font-size: 1.4rem; font-weight: 900; letter-spacing: 1px; }
+        .header-title p { font-size: 0.7rem; opacity: 0.4; letter-spacing: 3px; margin-top: 5px; }
+
+        /* الأزرار الرسمية - فخامة وبساطة */
+        .btn-official {
+            background: white;
+            color: black;
+            font-weight: 900;
             padding: 20px;
-            margin-bottom: 25px;
-            position: relative;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-        .badge {
-            position: absolute; top: -10px; left: 20px;
-            background: #ffd700; color: #000; font-size: 10px;
-            font-weight: 900; padding: 4px 12px; border-radius: 10px;
-        }
-        .distinguished-content { display: flex; align-items: center; gap: 15px; }
-        .avatar-circle {
-            width: 75px; height: 75px; border-radius: 50%;
-            border: 2px solid #ffd700; overflow: hidden; background: transparent; flex-shrink: 0;
-        }
-        .avatar-circle img { width: 100%; height: 100%; object-fit: contain; }
-        
-        .name-txt { color: #ffd700; font-weight: 900; font-size: 1.1rem; }
-        .desc-txt { font-size: 0.8rem; opacity: 0.8; font-weight: 700; }
-
-        /* الأزرار */
-        .btn-royal {
-            background: #ffffff; color: #000; font-weight: 900; padding: 18px;
-            border-radius: 15px; text-align: center; display: block;
-            text-decoration: none; margin-bottom: 12px; transition: 0.3s;
-        }
-        .btn-outline {
-            background: transparent; color: white; border: 1px solid #004d00;
-            font-weight: 700; padding: 18px; border-radius: 15px;
-            text-align: center; display: block; text-decoration: none;
-            margin-bottom: 12px; transition: 0.3s;
+            border-radius: 12px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.05);
         }
 
-        .grid-links { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-        .grid-card {
-            background: #001a00; border: 1px solid #003300; border-radius: 20px;
-            padding: 25px 10px; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; gap: 10px;
-            text-decoration: none; color: white; transition: 0.3s;
+        .btn-outline-official {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-weight: 700;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: 0.3s;
         }
 
-        .footer-info {
-            background: white; color: black; border-radius: 30px;
-            padding: 30px; width: 100%; margin-bottom: 30px;
+        /* شبكة الروابط الإدارية */
+        .admin-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            margin-top: 20px;
         }
+        .grid-item {
+            background: #0a0a0a;
+            border: 1px solid #151515;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .grid-item i { font-size: 1.2rem; color: #004d00; }
+        .grid-item span { font-size: 0.85rem; font-weight: 700; }
+
+        /* تذييل رسمي */
+        .official-footer {
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+            text-align: center;
+        }
+        .footer-text { font-size: 0.6rem; opacity: 0.3; font-weight: 900; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="logo-wrapper" data-aos="zoom-in">
+        <div class="logo-wrapper" data-aos="fade-down">
             <img src="royal_guard_logo.png" alt="Royal Guard Logo" class="main-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1022/1022215.png'">
         </div>
 
-        <div class="text-center mb-6" data-aos="fade-down">
-            <h1 class="text-xl font-black tracking-tight">رئاسة الحرس الملكي</h1>
-            <p class="text-[10px] opacity-50 uppercase mt-1">Royal Guard Command</p>
+        <div class="header-title" data-aos="fade-up">
+            <h1>رئاسة الحرس الملكي</h1>
+            <p>ROYAL GUARD PRESIDENCY</p>
         </div>
 
-        <div class="distinguished-card" data-aos="fade-up">
-            <div class="badge"><i class="fa-solid fa-crown"></i> متميز الدورة</div>
-            <div class="distinguished-content">
-                <div class="avatar-circle">
-                    <img src="Picsart_24-12-16_17-48-42-061.png" alt="شعار المتميز">
-                </div>
-                <div class="distinguished-info">
-                    <h3 class="name-txt">الاسم هنا</h3>
-                    <p class="desc-txt">نظير التفاني في حماية أمن الدورة</p>
-                </div>
-            </div>
-        </div>
-
-        <a href="control.html" class="btn-royal" data-aos="fade-up" data-aos-delay="100">بوابة الإدارة</a>
-        
-        <a href="rankings.html" class="btn-outline" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-medal ml-2 text-yellow-500"></i> سلم الرتب العسكرية
-        </a>
-
-        <div class="grid-links">
-            <a href="rules.html" class="grid-card" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fa-solid fa-book-shield text-green-500"></i> <span>التعليمات</span>
-            </a>
-            <a href="staff.html" class="grid-card" data-aos="zoom-in" data-aos-delay="400">
-                <i class="fa-solid fa-users-gear text-green-500"></i> <span>هيئة القيادة</span>
+        <div class="main-links">
+            <a href="portal.html" class="btn-official" data-aos="fade-up" data-aos-delay="100">بوابة الدخول الموحد</a>
+            
+            <a href="regulations.html" class="btn-outline-official" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-file-shield ml-2 text-green-700"></i> الأنظمة واللوائح الإدارية
             </a>
         </div>
 
-        <div class="footer-info" data-aos="fade-up">
-            <h2 class="font-black text-lg mb-2">عن الحرس الملكي</h2>
-            <p class="text-sm font-bold opacity-80 leading-relaxed">قوة نوعية مكرسة لأمن وحماية أهم المنشآت والشخصيات، نلتزم بأعلى معايير الانضباط والولاء.</p>
+        <div class="admin-grid">
+            <a href="staff.html" class="grid-item" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fa-solid fa-sitemap"></i>
+                <span>الهيكل التنظيمي</span>
+            </a>
+            <a href="notices.html" class="grid-item" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>المركز الإعلامي</span>
+            </a>
         </div>
 
-        <div class="text-center py-4 opacity-30 text-[10px] font-black text-white">
-            ROYAL GUARD SYSTEM • 2026
+        <div class="official-footer">
+            <div class="footer-text">نظام إدارة رئاسة الحرس الملكي • 2026</div>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({ duration: 1000, once: true });
     </script>
 </body>
 </html>
