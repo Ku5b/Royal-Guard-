@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة رئاسة الحرس الملكي | R.G.H</title>
+    <title>بوابة رئاسة الحرس الملكي</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,138 +13,121 @@
     <style>
         body { 
             font-family: 'Cairo', sans-serif; 
-            background: #050505; /* أسود ملكي مطفي */
-            min-height: 100vh;
-            margin: 0;
+            background-color: #080808;
             color: white;
+            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
-        /* لمسة علوية خضراء رسمية */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; width: 100%; height: 5px;
-            background: #004d00;
-        }
+        .container { width: 100%; max-width: 400px; padding: 50px 20px; }
 
-        .container { width: 100%; max-width: 400px; padding: 30px 20px; }
-
-        /* شعار الحرس الملكي */
-        .logo-wrapper { text-align: center; margin-bottom: 40px; }
-        .main-logo { 
-            width: 160px; 
-            margin: 0 auto; 
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.1));
-        }
-
-        .header-title {
+        /* ضبط الشعار الرسمي */
+        .logo-box {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-        .header-title h1 { font-size: 1.4rem; font-weight: 900; letter-spacing: 1px; }
-        .header-title p { font-size: 0.7rem; opacity: 0.4; letter-spacing: 3px; margin-top: 5px; }
+        .main-logo {
+            width: 180px; /* تكبير الحجم لبروز تفاصيل الشعار */
+            height: auto;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 20px rgba(0, 100, 0, 0.3));
+        }
 
-        /* الأزرار الرسمية - فخامة وبساطة */
-        .btn-official {
-            background: white;
-            color: black;
+        .header-section { text-align: center; margin-bottom: 40px; }
+        .header-section h1 { font-size: 1.6rem; font-weight: 900; color: #ffffff; margin-bottom: 5px; }
+        .header-section .line { width: 50px; height: 3px; background: #c5a059; margin: 10px auto; }
+
+        /* أزرار الهوية الرسمية */
+        .royal-btn {
+            background: #ffffff;
+            color: #000000;
             font-weight: 900;
             padding: 20px;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
             display: block;
             text-decoration: none;
             margin-bottom: 15px;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .btn-outline-official {
-            background: transparent;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.1);
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.03);
+            color: #ffffff;
+            border: 1px solid rgba(197, 160, 89, 0.3);
             font-weight: 700;
             padding: 18px;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
             display: block;
             text-decoration: none;
             margin-bottom: 15px;
-            transition: 0.3s;
         }
 
-        /* شبكة الروابط الإدارية */
-        .admin-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 15px; 
+        .grid-nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin-top: 20px;
         }
-        .grid-item {
-            background: #0a0a0a;
-            border: 1px solid #151515;
-            border-radius: 15px;
+        .nav-item {
+            background: #0f0f0f;
+            border: 1px solid #1a1a1a;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            border-radius: 20px;
+            text-align: center;
             text-decoration: none;
-            color: white;
+            color: #fff;
             transition: 0.3s;
         }
-        .grid-item i { font-size: 1.2rem; color: #004d00; }
-        .grid-item span { font-size: 0.85rem; font-weight: 700; }
+        .nav-item i { color: #c5a059; margin-bottom: 10px; font-size: 1.3rem; }
+        .nav-item span { display: block; font-size: 0.85rem; font-weight: 700; }
 
-        /* تذييل رسمي */
-        .official-footer {
-            margin-top: 50px;
-            padding: 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            width: 100%;
-            text-align: center;
-        }
-        .footer-text { font-size: 0.6rem; opacity: 0.3; font-weight: 900; letter-spacing: 2px; }
+        footer { margin-top: auto; padding: 20px; opacity: 0.2; font-size: 0.6rem; font-weight: 900; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="logo-wrapper" data-aos="fade-down">
-            <img src="royal_guard_logo.png" alt="Royal Guard Logo" class="main-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1022/1022215.png'">
+        <div class="logo-box" data-aos="zoom-in">
+            <img src="Picsart_24-12-16_17-48-42-061.png" 
+                 alt="رئاسة الحرس الملكي" 
+                 class="main-logo"
+                 onerror="this.src='https://i.ibb.co/b29b4bf7-f82a-4513-8d7c-8c75d3102801/image.png'">
         </div>
 
-        <div class="header-title" data-aos="fade-up">
+        <div class="header-section" data-aos="fade-up">
             <h1>رئاسة الحرس الملكي</h1>
-            <p>ROYAL GUARD PRESIDENCY</p>
+            <div class="line"></div>
         </div>
 
-        <div class="main-links">
-            <a href="portal.html" class="btn-official" data-aos="fade-up" data-aos-delay="100">بوابة الدخول الموحد</a>
+        <div class="links-wrapper">
+            <a href="login.html" class="royal-btn" data-aos="fade-up" data-aos-delay="100">بوابة المنسوبين</a>
             
-            <a href="regulations.html" class="btn-outline-official" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa-solid fa-file-shield ml-2 text-green-700"></i> الأنظمة واللوائح الإدارية
+            <a href="regulations.html" class="secondary-btn" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-shield-halved ml-2" style="color: #c5a059;"></i> الأنظمة والتعليمات
             </a>
         </div>
 
-        <div class="admin-grid">
-            <a href="staff.html" class="grid-item" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fa-solid fa-sitemap"></i>
+        <div class="grid-nav">
+            <a href="org.html" class="nav-item" data-aos="fade-right" data-aos-delay="300">
+                <i class="fa-solid fa-layer-group"></i>
                 <span>الهيكل التنظيمي</span>
             </a>
-            <a href="notices.html" class="grid-item" data-aos="zoom-in" data-aos-delay="400">
-                <i class="fa-solid fa-bullhorn"></i>
-                <span>المركز الإعلامي</span>
+            <a href="contact.html" class="nav-item" data-aos="fade-left" data-aos-delay="400">
+                <i class="fa-solid fa-headset"></i>
+                <span>مركز التواصل</span>
             </a>
         </div>
-
-        <div class="official-footer">
-            <div class="footer-text">نظام إدارة رئاسة الحرس الملكي • 2026</div>
-        </div>
     </div>
+
+    <footer>
+        ROYAL GUARD PRESIDENCY SYSTEM • 2026
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
