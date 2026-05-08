@@ -13,7 +13,7 @@
     <style>
         body { 
             font-family: 'Cairo', sans-serif; 
-            background-color: #050505;
+            background: #050505; /* أسود رسمي */
             color: white;
             margin: 0;
             display: flex;
@@ -22,101 +22,123 @@
             min-height: 100vh;
         }
 
-        .container { width: 100%; max-width: 400px; padding: 30px 20px; }
+        /* خط علوي أخضر يرمز للحرس الملكي */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; width: 100%; height: 4px;
+            background: #004d00;
+        }
 
-        /* تنسيق الشعار لضمان الملء الصحيح للمساحة */
+        .container { width: 100%; max-width: 400px; padding: 40px 20px; }
+
+        /* منطقة الشعار المربوط بملفك الخاص */
         .logo-container {
             text-align: center;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: center;
-            height: 200px; /* تحديد ارتفاع ثابت لمنع القفز */
-            align-items: center;
+            margin-bottom: 30px;
         }
         .main-logo {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            width: 180px; /* حجم متناسق لشعار الحرس الملكي */
+            height: auto;
+            margin: 0 auto;
         }
 
-        .title-section { text-align: center; margin-bottom: 35px; }
-        .title-section h1 { font-size: 1.6rem; font-weight: 900; margin-bottom: 2px; }
-        .title-section p { font-size: 0.6rem; color: #444; letter-spacing: 2px; text-transform: uppercase; }
+        .header-section { text-align: center; margin-bottom: 40px; }
+        .header-section h1 { font-size: 1.4rem; font-weight: 900; color: #ffffff; }
+        .header-section p { font-size: 0.65rem; color: #444; letter-spacing: 3px; margin-top: 5px; }
 
         /* الأزرار الرسمية */
-        .official-link {
+        .btn-link-main {
             background: #ffffff;
             color: #000000;
             font-weight: 900;
             padding: 18px;
-            border-radius: 15px;
+            border-radius: 12px;
             text-align: center;
             display: block;
             text-decoration: none;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+            margin-bottom: 12px;
+            transition: 0.3s;
         }
 
-        .secondary-link {
-            background: #111;
+        .btn-link-sub {
+            background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
-            border: 1px solid #222;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             font-weight: 700;
             padding: 16px;
-            border-radius: 15px;
+            border-radius: 12px;
             text-align: center;
             display: block;
             text-decoration: none;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        .info-grid {
+        /* شبكة المعلومات الإدارية */
+        .grid-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
+            margin-top: 20px;
         }
-        .grid-box {
-            background: #080808;
+        .grid-card {
+            background: #0a0a0a;
             border: 1px solid #151515;
-            padding: 20px;
-            border-radius: 20px;
+            padding: 22px 10px;
+            border-radius: 15px;
             text-align: center;
             text-decoration: none;
             color: #fff;
+            transition: 0.2s;
         }
-        .grid-box i { color: #15803d; margin-bottom: 8px; font-size: 1.2rem; }
-        .grid-box span { display: block; font-size: 0.8rem; font-weight: 900; }
+        .grid-card i { color: #004d00; margin-bottom: 10px; font-size: 1.2rem; }
+        .grid-card span { display: block; font-size: 0.8rem; font-weight: 700; }
+
+        .footer-tag {
+            margin-top: 50px;
+            text-align: center;
+            opacity: 0.2;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="logo-container" data-aos="zoom-in">
-            <img src="unnamed.png" 
+            <img src="Picsart_24-12-16_17-48-42-061.png" 
                  alt="شعار رئاسة الحرس الملكي" 
                  class="main-logo">
         </div>
 
-        <div class="title-section" data-aos="fade-up">
+        <div class="header-section" data-aos="fade-up">
             <h1>رئاسة الحرس الملكي</h1>
-            <p>Royal Guard Presidency</p>
+            <p>ROYAL GUARD PORTAL</p>
         </div>
 
-        <a href="portal.html" class="official-link" data-aos="fade-up" data-aos-delay="100">بوابة المنسوبين الموحدة</a>
-        
-        <a href="regulations.html" class="secondary-link" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-file-shield ml-2 text-green-700"></i> الأنظمة واللوائح الإدارية
-        </a>
+        <div class="links-wrapper">
+            <a href="portal.html" class="btn-link-main" data-aos="fade-up" data-aos-delay="100">بوابة المنسوبين الموحدة</a>
+            
+            <a href="regulations.html" class="btn-link-sub" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-file-contract ml-2 text-green-900"></i> الأنظمة واللوائح الإدارية
+            </a>
+        </div>
 
-        <div class="info-grid">
-            <a href="org.html" class="grid-box" data-aos="zoom-in" data-aos-delay="300">
+        <div class="grid-info">
+            <a href="org.html" class="grid-card" data-aos="zoom-in" data-aos-delay="300">
                 <i class="fa-solid fa-sitemap"></i>
                 <span>الهيكل التنظيمي</span>
             </a>
-            <a href="staff.html" class="grid-box" data-aos="zoom-in" data-aos-delay="400">
+            <a href="staff.html" class="grid-card" data-aos="zoom-in" data-aos-delay="400">
                 <i class="fa-solid fa-users-gear"></i>
-                <span>شؤون الأفراد</span>
+                <span>شؤون الموظفين</span>
             </a>
+        </div>
+
+        <div class="footer-tag">
+            R.G.H SYSTEM • 2026
         </div>
     </div>
 
