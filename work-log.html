@@ -7,6 +7,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
         body { font-family: 'Cairo', sans-serif; background: #050505; color: white; min-height: 100vh; }
@@ -25,7 +26,16 @@
         }
         .input-field:focus { border-color: #006400; box-shadow: 0 0 10px rgba(0, 100, 0, 0.2); }
         
+        /* تنسيق خاص لخانات الملفات */
+        .file-input {
+            background: #111;
+            border: 1px dashed #333;
+            padding: 10px;
+            cursor: pointer;
+        }
+
         label { font-size: 0.85rem; font-weight: 700; color: #aaa; margin-right: 5px; }
+        .file-label { color: #d4af37; font-size: 0.75rem; display: block; margin-top: 5px; }
 
         .submit-btn {
             background: #fff;
@@ -33,48 +43,76 @@
             font-weight: 900;
             width: 100%;
             padding: 18px;
-            border-radius: 12px;
+            border-radius: 15px;
             margin-top: 25px;
             cursor: pointer;
             transition: 0.3s;
+            border: none;
         }
         .submit-btn:hover { background: #006400; color: #fff; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
     <div class="form-container">
-        <h2 class="text-center font-black text-xl mb-8">رفع تقرير عمل يومي</h2>
+        <a href="portal.html" class="back-link">
+            <i class="fa-solid fa-arrow-right ml-2"></i> العودة للبوابة
+        </a>
 
-        <!-- استبدل YOUR_EMAIL بإيميلك الشخصي -->
-        <form action="https://formspree.io/f/YOUR_ID" method="POST">
+        <h2 class="text-center font-black text-xl mb-8">رفع تقرير عمل مع الدليل</h2>
+
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
             
             <div class="mb-4">
                 <label>اسم المنسوب</label>
-                <input type="text" name="الاسم" class="input-field" placeholder="أدخل الاسم الثلاثي" required>
+                <input type="text" name="اسم_المنسوب" class="input-field" placeholder="أدخل الاسم الثلاثي" required>
             </div>
 
             <div class="mb-4">
-                <label>الرقم العسكري / الهوية</label>
-                <input type="text" name="المعرف" class="input-field" placeholder="أدخل الرقم" required>
+                <label>الرمز العسكري</label>
+                <input type="text" name="الرمز_العسكري" class="input-field" placeholder="أدخل الرمز العسكري" required>
             </div>
 
             <div class="mb-4">
                 <label>نوع المهمة</label>
-                <select name="نوع المهمة" class="input-field">
-                    <option>حراسة ميدانية</option>
-                    <option>مهمة إدارية</option>
-                    <option>دورية أمنية</option>
-                    <option>أخرى</option>
+                <select name="نوع_المهمة" class="input-field" required>
+                    <option value="" disabled selected>اختر المهمة...</option>
+                    <option>حراسة المحكمة</option>
+                    <option>حراسة البنك المركزي</option>
+                    <option>حراسة المستشفى</option>
+                    <option>حراسة مركز الشرطة</option>
+                    <option>حراسة إحدى قيادات وزارة الداخلية</option>
+                    <option>حراسة شخصيات هامة أو ذوي مناصب</option>
                 </select>
             </div>
 
+            <!-- إضافة خانات الصور -->
             <div class="mb-4">
-                <label>تفاصيل العمل المنجز</label>
-                <textarea name="التفاصيل" rows="4" class="input-field" placeholder="اكتب ملخص ما تم إنجازه..." required></textarea>
+                <label>صور الدليل (1)</label>
+                <input type="file" name="دليل_صورة_1" accept="image/*" class="input-field file-input">
+                <span class="file-label text-xs">* أرفق صورة إثبات الموقع أو المهمة</span>
             </div>
 
-            <button type="submit" class="submit-btn">إرسال التقرير للمسؤول</button>
+            <div class="mb-4">
+                <label>صور الدليل (2)</label>
+                <input type="file" name="دليل_صورة_2" accept="image/*" class="input-field file-input">
+            </div>
+
+            <div class="mb-4">
+                <label>تفاصيل إضافية</label>
+                <textarea name="التفاصيل" rows="3" class="input-field" placeholder="أي ملاحظات إضافية..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">إرسال التقرير والملفات</button>
         </form>
     </div>
 
