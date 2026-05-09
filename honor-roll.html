@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة شرف الحرس الملكي</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background: #000;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container { width: 100%; max-width: 450px; padding: 30px 20px; margin: 0 auto; }
+
+        .honor-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .honor-header i {
+            font-size: 3.5rem;
+            color: #d4af37;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+            margin-bottom: 20px;
+        }
+        .honor-header h1 { font-size: 1.7rem; font-weight: 900; color: #d4af37; }
+
+        /* بطاقة القائد المتميزة */
+        .leader-card {
+            background: linear-gradient(145deg, #151515, #0a0a0a);
+            border: 2px solid #d4af37; /* إطار ذهبي كامل للتمييز */
+            padding: 30px 20px;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .medal-badge {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d4af37;
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .leader-info h2 { 
+            font-size: 1.5rem; 
+            font-weight: 900; 
+            margin-top: 10px;
+            background: linear-gradient(to bottom, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .rank-tag {
+            color: #d4af37;
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .position-tag {
+            background: rgba(255, 255, 255, 0.05);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #eee;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="portal.html" class="back-link">
+            <i class="fa-solid fa-arrow-right ml-2"></i> العودة للبوابة
+        </a>
+
+        <div class="honor-header" data-aos="zoom-in">
+            <i class="fa-solid fa-award"></i>
+            <h1>قائمة وسام التميز</h1>
+        </div>
+
+        <!-- بطاقة المقدم سلطان السلمي -->
+        <div class="leader-card" data-aos="fade-up">
+            <div class="medal-badge">قائد الرئاسة</div>
+            
+            <div class="leader-info">
+                <span class="rank-tag">المقدم</span>
+                <h2>سلطان السلمي</h2>
+                <div class="position-tag">
+                    <i class="fa-solid fa-shield-halved ml-2"></i>
+                    قائد رئاسة الحرس الملكي
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center text-[10px] text-gray-700 mt-20 tracking-widest uppercase">
+            Official Honor Roll • Royal Guard
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
