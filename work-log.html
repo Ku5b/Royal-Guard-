@@ -24,9 +24,8 @@
             outline: none;
             transition: 0.3s;
         }
-        .input-field:focus { border-color: #006400; box-shadow: 0 0 10px rgba(0, 100, 0, 0.2); }
+        .input-field:focus { border-color: #22c55e; box-shadow: 0 0 10px rgba(34, 197, 94, 0.2); }
         
-        /* تنسيق خاص لخانات الملفات */
         .file-input {
             background: #111;
             border: 1px dashed #333;
@@ -49,7 +48,7 @@
             transition: 0.3s;
             border: none;
         }
-        .submit-btn:hover { background: #006400; color: #fff; }
+        .submit-btn:hover { background: #22c55e; color: #fff; transform: translateY(-2px); }
 
         .back-link {
             display: inline-flex;
@@ -58,34 +57,38 @@
             text-decoration: none;
             font-size: 0.85rem;
             margin-bottom: 20px;
+            transition: 0.3s;
         }
+        .back-link:hover { color: #fff; }
     </style>
 </head>
 <body>
 
     <div class="form-container">
+        <!-- رابط العودة لصفحة البوابة -->
         <a href="portal.html" class="back-link">
             <i class="fa-solid fa-arrow-right ml-2"></i> العودة للبوابة
         </a>
 
-        <h2 class="text-center font-black text-xl mb-8">رفع تقرير عمل مع الدليل</h2>
+        <h2 class="text-center font-black text-xl mb-8">رفع تقرير عمل يومي</h2>
 
-        <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
+        <!-- تم ربط النموذج بـ Formspree الخاص بك -->
+        <form action="https://formspree.io/f/xbdwzwkp" method="POST" enctype="multipart/form-data">
             
             <div class="mb-4">
-                <label> [discord] اسم المنسوب</label>
-                <input type="text" name="اسم_المنسوب" class="input-field" placeholder="أدخل الاسم " required>
+                <label>[ Discord ] اسم المنسوب</label>
+                <input type="text" name="اسم المنسوب" class="input-field" placeholder="أدخل الاسم " required>
             </div>
 
             <div class="mb-4">
                 <label>الرمز العسكري</label>
-                <input type="text" name="الرمز_العسكري" class="input-field" placeholder="أدخل الرمز العسكري" required>
+                <input type="text" name="الرمز العسكري" class="input-field" placeholder="أدخل الرمز العسكري" required>
             </div>
 
             <div class="mb-4">
                 <label>نوع المهمة</label>
-                <select name="نوع_المهمة" class="input-field" required>
-                    <option value="" disabled selected>اختر المهمة...</option>
+                <select name="نوع المهمة" class="input-field" required>
+                    <option value="" disabled selected>اختر المهمة من القائمة...</option>
                     <option>حراسة المحكمة</option>
                     <option>حراسة البنك المركزي</option>
                     <option>حراسة المستشفى</option>
@@ -95,24 +98,23 @@
                 </select>
             </div>
 
-            <!-- إضافة خانات الصور -->
             <div class="mb-4">
                 <label>صور الدليل (1)</label>
-                <input type="file" name="دليل_صورة_1" accept="image/*" class="input-field file-input">
-                <span class="file-label text-xs">* أرفق صورة إثبات الموقع أو المهمة</span>
+                <input type="file" name="الدليل_الأول" accept="image/*" class="input-field file-input">
+                <span class="file-label">* أرفق صورة إثبات الموقع</span>
             </div>
 
             <div class="mb-4">
                 <label>صور الدليل (2)</label>
-                <input type="file" name="دليل_صورة_2" accept="image/*" class="input-field file-input">
+                <input type="file" name="الدليل_الثاني" accept="image/*" class="input-field file-input">
             </div>
 
             <div class="mb-4">
-                <label>تفاصيل إضافية</label>
-                <textarea name="التفاصيل" rows="3" class="input-field" placeholder="أي ملاحظات إضافية..."></textarea>
+                <label>تفاصيل العمل المنجز</label>
+                <textarea name="تفاصيل العمل" rows="4" class="input-field" placeholder="اكتب ملخص الإنجاز..." required></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">إرسال التقرير والملفات</button>
+            <button type="submit" class="submit-btn">إرسال التقرير للمسؤول</button>
         </form>
     </div>
 
