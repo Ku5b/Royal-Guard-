@@ -10,31 +10,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #050505; color: white; min-height: 100vh; }
-        .db-container { width: 100%; max-width: 1000px; padding: 20px; margin: 0 auto; }
+        body { font-family: 'Cairo', sans-serif; background: #000; color: white; min-height: 100vh; margin: 0; }
+        .db-container { width: 100%; max-width: 1000px; padding: 15px; margin: 0 auto; }
         
-        /* تصميم الجدول الاحترافي */
+        /* تحسين الحاوية لمنع التداخل */
         .table-wrapper {
             background: #0a0a0a;
             border: 1px solid #1a1a1a;
             border-radius: 15px;
-            overflow-x: auto; /* للسماح بالتمرير على الجوال */
-            margin-top: 20px;
+            overflow-x: auto; /* يسمح بالتمرير الجانبي بدلاً من التداخل */
+            -webkit-overflow-scrolling: touch;
         }
         
-        table { width: 100%; border-collapse: collapse; text-align: center; font-size: 0.85rem; }
-        th { background: #111; color: #d4af37; padding: 15px; border-bottom: 2px solid #1a1a1a; font-weight: 900; }
-        td { padding: 12px; border-bottom: 1px solid #151515; color: #eee; }
-        tr:hover { background: rgba(212, 175, 55, 0.03); }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; } /* حد أدنى للعرض لمنع ضغط الأعمدة */
+        th { background: #111; color: #d4af37; padding: 12px 8px; border-bottom: 2px solid #1a1a1a; font-weight: 900; font-size: 0.8rem; }
+        td { padding: 12px 8px; border-bottom: 1px solid #151515; color: #eee; font-size: 0.8rem; vertical-align: middle; }
 
-        .rank-badge { background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; border: 1px solid #333; font-size: 0.75rem; }
-        .unit-tag { color: #22c55e; font-weight: 700; }
+        /* تنسيق الرتب لمنع التداخل */
+        .rank-badge { 
+            background: rgba(255,255,255,0.05); 
+            padding: 5px 8px; 
+            border-radius: 6px; 
+            border: 1px solid #333; 
+            white-space: nowrap; /* يمنع نزول النص لسطر جديد */
+            display: inline-block;
+        }
+
+        .unit-tag { color: #22c55e; font-weight: 700; white-space: nowrap; }
 
         .back-link {
             display: inline-flex; align-items: center; color: #555;
-            text-decoration: none; font-size: 0.85rem; margin-bottom: 15px; transition: 0.3s;
+            text-decoration: none; font-size: 0.8rem; margin-bottom: 15px;
         }
-        .back-link:hover { color: #d4af37; }
     </style>
 </head>
 <body>
@@ -44,20 +51,20 @@
             <i class="fa-solid fa-arrow-right ml-2"></i> العودة للبوابة
         </a>
 
-        <div class="text-center mb-8">
-            <h1 class="text-2xl font-black text-white">قاعدة بيانات المنسوبين</h1>
-            <p class="text-gray-500 text-xs mt-2 tracking-widest uppercase">Personnel Records • Royal Guard</p>
+        <div class="text-center mb-6">
+            <h1 class="text-xl font-black text-white">قاعدة بيانات المنسوبين</h1>
+            <p class="text-gray-600 text-[10px] tracking-widest uppercase">Personnel Records • Royal Guard</p>
         </div>
 
         <div class="table-wrapper">
             <table>
                 <thead>
                     <tr>
-                        <th>اليونت (Unit)</th>
-                        <th>الاسم (Discord)</th>
-                        <th>الاسم (Roblox)</th>
-                        <th>الرتبة (الحرس)</th>
-                        <th>الرتبة (الداخلية)</th>
+                        <th>اليونت</th>
+                        <th>Discord</th>
+                        <th>Roblox</th>
+                        <th>رتبة الحرس</th>
+                        <th>رتبة الداخلية</th>
                         <th>الإيميل</th>
                     </tr>
                 </thead>
@@ -68,16 +75,15 @@
                         <td>Sultan_RG</td>
                         <td><span class="rank-badge">مقدم</span></td>
                         <td><span class="rank-badge">عقيد</span></td>
-                        <td class="text-gray-400">sultan@example.com</td>
+                        <td class="text-gray-500">sultan@mail.com</td>
                     </tr>
-                    
                     <tr>
                         <td class="unit-tag">قوة الحماية</td>
                         <td>User#1234</td>
                         <td>Player_99</td>
                         <td><span class="rank-badge">ملازم أول</span></td>
                         <td><span class="rank-badge">رائد</span></td>
-                        <td class="text-gray-400">member@example.com</td>
+                        <td class="text-gray-500">member@mail.com</td>
                     </tr>
                 </tbody>
             </table>
