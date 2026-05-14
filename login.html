@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | الحرس الملكي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background: #000; color: white; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .login-box { width: 100%; max-width: 380px; padding: 40px 20px; text-align: center; }
+        .input-auth { background: #0a0a0a; border: 1px solid #1a1a1a; color: white; width: 100%; padding: 15px; border-radius: 12px; margin-top: 15px; text-align: center; outline: none; }
+        .login-btn { background: #d4af37; color: black; font-weight: 900; width: 100%; padding: 15px; border-radius: 12px; margin-top: 20px; cursor: pointer; transition: 0.3s; }
+        .login-btn:hover { background: #fff; }
+        .error-msg { color: #ff4d4d; font-size: 0.8rem; margin-top: 10px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <img src="unnamed.png" alt="الشعار" style="width: 100px; margin: 0 auto 20px;">
+        <h2 class="text-xl font-black mb-2">تسجيل دخول المنسوبين</h2>
+        <p class="text-gray-500 text-xs mb-8">يجب إدخال الرمز السري للوصول للأنظمة</p>
+
+        <input type="password" id="password" class="input-auth" placeholder="أدخل كلمة المرور">
+        <div id="error" class="error-msg">كلمة المرور غير صحيحة، حاول مجدداً.</div>
+        
+        <button onclick="checkLogin()" class="login-btn">دخول النظام</button>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const pass = document.getElementById('password').value;
+            // يمكنك تغيير كلمة المرور هنا
+            const correctPass = "RG2026"; 
+
+            if (pass === correctPass) {
+                // إذا كانت صحيحة، يوجهه لصفحة البوابة
+                window.location.href = "portal.html"; 
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
