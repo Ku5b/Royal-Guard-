@@ -3,121 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كتيب الحرس الملكي | نظام النقاط</title>
+    <title>كتيب الحرس الملكي | الدليل الكامل</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #000; color: white; padding: 20px; }
+        body { font-family: 'Cairo', sans-serif; background: #000; color: white; padding: 10px; line-height: 1.6; }
+        .handbook-card { max-width: 600px; margin: 0 auto; background: #050505; border-radius: 30px; border: 1px solid #111; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.9); }
         
-        .handbook-card {
-            max-width: 500px; margin: 0 auto;
-            background: #050505; border-radius: 30px;
-            border: 1px solid #111; overflow: hidden;
-        }
-
-        .section-title {
-            background: linear-gradient(to left, #111, #050505);
-            padding: 20px; border-bottom: 2px solid #22c55e;
-            text-align: center;
-        }
-
-        .point-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px; border-bottom: 1px solid #111;
-            transition: 0.3s;
-        }
+        /* الهيدر */
+        .section-title { background: linear-gradient(to bottom, #111, #050505); padding: 30px 20px; border-bottom: 2px solid #22c55e; text-align: center; }
+        
+        /* العناوين الفرعية */
+        .category-header { padding: 15px 20px; font-size: 0.9rem; color: #22c55e; font-weight: 900; border-top: 1px solid #111; background: #080808; display: flex; align-items: center; gap: 10px; }
+        
+        /* نظام النقاط */
+        .point-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #0f0f0f; transition: 0.3s; }
         .point-item:hover { background: #0a0a0a; }
+        .point-text { font-size: 0.8rem; color: #ccc; }
+        .point-value { background: #22c55e; color: black; font-weight: 900; min-width: 40px; height: 25px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 0.8rem; }
 
-        .point-text { font-size: 0.85rem; color: #ccc; flex: 1; margin-left: 10px; }
+        /* الإرشادات */
+        .instruction-item { padding: 15px 20px; border-bottom: 1px solid #0f0f0f; font-size: 0.85rem; color: #ddd; }
+        .instruction-item strong { color: #22c55e; display: block; margin-bottom: 5px; }
+        .alert-text { color: #ff4d4d; font-weight: bold; }
+        .chat-box { background: #0f0f0f; padding: 10px; border-radius: 10px; border-right: 3px solid #22c55e; margin-top: 8px; color: #22c55e; font-family: monospace; }
+
+        /* الصور والتشكيلات */
+        .gallery-grid { display: grid; grid-template-cols: 1fr 1fr; gap: 12px; padding: 15px; }
+        .gallery-item { background: #0a0a0a; border-radius: 15px; overflow: hidden; border: 1px solid #151515; }
+        .gallery-item img { width: 100%; height: 130px; object-fit: cover; }
+        .img-desc { padding: 8px; font-size: 0.65rem; color: #888; text-align: center; background: #0a0a0a; }
         
-        .point-value {
-            background: #22c55e; color: black; font-weight: 900;
-            min-width: 45px; height: 30px; display: flex; 
-            align-items: center; justify-content: center;
-            border-radius: 8px; font-size: 0.9rem;
-        }
+        .full-img-container { padding: 0 15px 15px; }
+        .full-img-container img { width: 100%; border-radius: 15px; border: 1px solid #22c55e; }
 
-        .note-box {
-            background: rgba(34, 197, 94, 0.05);
-            border: 1px dashed #22c55e;
-            padding: 15px; margin: 20px; border-radius: 15px;
-            font-size: 0.75rem; color: #aaa; line-height: 1.6;
-        }
-
-        .category-header {
-            padding: 15px 20px 5px; font-size: 0.7rem;
-            color: #22c55e; font-weight: 900; text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .note-box { background: rgba(34, 197, 94, 0.05); border: 1px dashed #22c55e; padding: 15px; margin: 20px; border-radius: 15px; font-size: 0.75rem; color: #aaa; }
     </style>
 </head>
 <body>
 
     <div class="handbook-card">
-        <!-- العنوان الرئيسي -->
+        <!-- الرأس -->
         <div class="section-title">
-            <h1 class="text-xl font-black">كتيب التعليمات العسكرية</h1>
-            <p class="text-[10px] text-gray-500 tracking-[3px] mt-1">ROYAL GUARD HANDBOOK</p>
+            <h1 class="text-2xl font-black italic tracking-tighter">الحرس الملكي</h1>
+            <p class="text-[10px] text-gray-500 tracking-[5px] uppercase mt-1">الكتيب الرسمي للمنسوبين</p>
         </div>
 
-        <!-- قسم نظام النقاط -->
-        <div class="category-header">أولاً: نظام النقاط</div>
-
+        <!-- أولاً: نظام النقاط -->
+        <div class="category-header"><i class="fa-solid fa-medal"></i> أولاً: نظام النقاط</div>
         <div class="points-list">
-            <div class="point-item">
-                <span class="point-text">حراسة المنشآت الحكومية (لكل 30 دقيقة)</span>
-                <span class="point-value">+2</span>
-            </div>
+            <div class="point-item"><span class="point-text">حراسة المنشآت الحكومية (نص ساعة)</span> <span class="point-value">+2</span></div>
+            <div class="point-item"><span class="point-text">حراسة تدريبات المقبولين (للنهاية)</span> <span class="point-value">+2</span></div>
+            <div class="point-item"><span class="point-text">حراسة رتبة عليا (ربع ساعة)</span> <span class="point-value">+1</span></div>
+            <div class="point-item"><span class="point-text">حضور دورات تدريبية</span> <span class="point-value">+2</span></div>
+            <div class="point-item"><span class="point-text">حضور حملة أمنية داخلية</span> <span class="point-value">+3</span></div>
+            <div class="point-item"><span class="point-text">حضور المحاكمات وحراستها</span> <span class="point-value">+4</span></div>
+            <div class="point-item"><span class="point-text">حراسة بوابة مدينة التدريبات (نص ساعة)</span> <span class="point-value">+2</span></div>
+            <div class="point-item"><span class="point-text">الزيارات المستمرة</span> <span class="point-value" style="width: auto; padding: 0 5px;">مكافأة قيادية</span></div>
+        </div>
+        <div class="note-box text-center">
+             في حال تواجدت 30 دقيقة فقط في حراسة التدريب دون إكمالها للنهاية، يُحسب لك <b>1 نقطة</b> فقط.
+        </div>
 
-            <div class="point-item">
-                <span class="point-text">حراسة تدريبات المقبولين مبدئياً (للنهاية)</span>
-                <span class="point-value">+2</span>
-            </div>
+        <!-- ثانياً: إرشادات الحرس الملكي -->
+        <div class="category-header"><i class="fa-solid fa-clipboard-list"></i> ثانياً: إرشادات الحرس الملكي</div>
+        <div class="instruction-item">
+            <strong>مرافقة الرتب العليا</strong>
+            يجب على الشخص الذي بيمين الرتبة العليا مرافقته طوال الوقت. (الاعتماد يُعطى من مسؤول الحرس).
+        </div>
+        <div class="instruction-item">
+            <strong>بروتوكول التشكيلات</strong>
+            التشكيلة الأساسية: <span class="text-green-500 font-bold">كتف خلف كتف</span>.
+            في المناطق الخطرة (تفتيش - ازدحام - منطقة غير آمنة): يتم التحويل لـ <span class="alert-text">تشكيلة الخطر</span> (كتف أمام كتف).
+            <p class="mt-2 text-xs italic text-gray-500">* في حال وجود حارسين فقط، يجب رفع السلاح فوراً في وضعية الخطر.</p>
+        </div>
+        <div class="instruction-item">
+            <strong>طلب إذن الحراسة</strong>
+            يسمح فقط بحراسة رتبة <span class="text-green-500">لواء فأعلى</span>. ابدأ بالتحية الرسمية:
+            <div class="chat-box">"تحياتي معالي (الرتبة).. هل تسمح لي بحراستك؟"</div>
+            <p class="mt-2">• وافق: التزم بالوضعية <span class="alert-text">(صور البداية ضرورية)</span>.</p>
+            <p>• رفض: غادر فوراً دون إزعاج.</p>
+        </div>
 
-            <div class="point-item">
-                <span class="point-text">حراسة رتبة عليا (لكل 15 دقيقة)</span>
-                <span class="point-value">+1</span>
-            </div>
+        <!-- ثالثاً: حراسة التدريبات والتشكيلات الميدانية -->
+        <div class="category-header"><i class="fa-solid fa-camera"></i> ثالثاً: الدليل المصور للتشكيلات</div>
+        
+        <div class="instruction-item">وضعية الحراسة المباشرة لـ "رتبة عليا" (image_58.png):</div>
+        <div class="full-img-container">
+            <img src="image_58.png" alt="تشكيل حماية الشخصيات">
+        </div>
 
-            <div class="point-item">
-                <span class="point-text">حضور دورات تدريبية لرئاسة الحرس الملكي</span>
-                <span class="point-value">+2</span>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="image_59.png" alt="تأمين بوابات">
+                <div class="img-desc">تأمين المداخل (image_59.png)</div>
             </div>
-
-            <div class="point-item">
-                <span class="point-text">حضور حملة أمنية داخلية للحرس الملكي</span>
-                <span class="point-value">+3</span>
+            <div class="gallery-item">
+                <img src="image_60.png" alt="ميدان الرماية">
+                <div class="img-desc">حراسة الميدان (image_60.png)</div>
             </div>
-
-            <div class="point-item">
-                <span class="point-text">حضور المحاكمات وحراستها إلى النهاية</span>
-                <span class="point-value">+4</span>
+            <div class="gallery-item">
+                <img src="image_52.png" alt="حواجز أمنية">
+                <div class="img-desc">خلف الحواجز (image_52.png)</div>
             </div>
-
-            <div class="point-item">
-                <span class="point-text">حراسة بوابة مدينة التدريبات (لكل 30 دقيقة)</span>
-                <span class="point-value">+2</span>
-            </div>
-
-            <div class="point-item">
-                <span class="point-text">حضور الزيارات بشكل مستمر</span>
-                <span class="point-value text-xs" style="min-width: 80px;">مكافأة خاصة</span>
+            <div class="gallery-item">
+                <img src="image_61.png" alt="الاستعداد">
+                <div class="img-desc">وضعية التأهب (image_61.png)</div>
             </div>
         </div>
 
-        <!-- الملاحظة -->
-        <div class="note-box">
-            <i class="fa-solid fa-circle-info ml-1 text-green-500"></i>
-            <strong>ملاحظة هامة:</strong> 
-            في حال لم يتم إكمالك لحراسة التدريبات المبدئية إلى نهايتها ولكنك تواجدت لمدة نصف ساعة في حراسة التدريب، يُحسب لك (1) نقطة فقط.
+        <div class="instruction-item">
+            <strong>تنبيه نهائي:</strong>
+            يجب الإقلال من التحدث واقتصاره على الرسميات. للمزاح استخدم الخاص <span class="text-blue-400">(/w)</span>.
         </div>
 
-        <!-- تذييل الصفحة -->
+        <!-- الزر السفلي -->
         <div class="p-6">
-            <a href="index.html" class="block text-center py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-xs font-bold text-gray-500 hover:text-white transition">
-                العودة للبوابة الرئيسية
+            <a href="index.html" class="block text-center py-4 bg-zinc-900 border border-zinc-800 rounded-2xl text-xs font-bold text-gray-400 hover:text-white transition uppercase tracking-widest">
+                < i class="fa-solid fa-house ml-2"></i> العودة للبوابة الرئيسية
             </a>
         </div>
     </div>
