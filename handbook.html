@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتيب الحرس الملكي | نظام النقاط</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body { font-family: 'Cairo', sans-serif; background: #000; color: white; padding: 20px; }
+        
+        .handbook-card {
+            max-width: 500px; margin: 0 auto;
+            background: #050505; border-radius: 30px;
+            border: 1px solid #111; overflow: hidden;
+        }
+
+        .section-title {
+            background: linear-gradient(to left, #111, #050505);
+            padding: 20px; border-bottom: 2px solid #22c55e;
+            text-align: center;
+        }
+
+        .point-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px; border-bottom: 1px solid #111;
+            transition: 0.3s;
+        }
+        .point-item:hover { background: #0a0a0a; }
+
+        .point-text { font-size: 0.85rem; color: #ccc; flex: 1; margin-left: 10px; }
+        
+        .point-value {
+            background: #22c55e; color: black; font-weight: 900;
+            min-width: 45px; height: 30px; display: flex; 
+            align-items: center; justify-content: center;
+            border-radius: 8px; font-size: 0.9rem;
+        }
+
+        .note-box {
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px dashed #22c55e;
+            padding: 15px; margin: 20px; border-radius: 15px;
+            font-size: 0.75rem; color: #aaa; line-height: 1.6;
+        }
+
+        .category-header {
+            padding: 15px 20px 5px; font-size: 0.7rem;
+            color: #22c55e; font-weight: 900; text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="handbook-card">
+        <!-- العنوان الرئيسي -->
+        <div class="section-title">
+            <h1 class="text-xl font-black">كتيب التعليمات العسكرية</h1>
+            <p class="text-[10px] text-gray-500 tracking-[3px] mt-1">ROYAL GUARD HANDBOOK</p>
+        </div>
+
+        <!-- قسم نظام النقاط -->
+        <div class="category-header">أولاً: نظام النقاط</div>
+
+        <div class="points-list">
+            <div class="point-item">
+                <span class="point-text">حراسة المنشآت الحكومية (لكل 30 دقيقة)</span>
+                <span class="point-value">+2</span>
+            </div>
+
+            <div class="point-item">
+                <span class="point-text">حراسة تدريبات المقبولين مبدئياً (للنهاية)</span>
+                <span class="point-value">+2</span>
+            </div>
+
+            <div class="point-item">
+                <span class="point-text">حراسة رتبة عليا (لكل 15 دقيقة)</span>
+                <span class="point-value">+1</span>
+            </div>
+
+            <div class="point-item">
+                <span class="point-text">حضور دورات تدريبية لرئاسة الحرس الملكي</span>
+                <span class="point-value">+2</span>
+            </div>
+
+            <div class="point-item">
+                <span class="point-text">حضور حملة أمنية داخلية للحرس الملكي</span>
+                <span class="point-value">+3</span>
+            </div>
+
+            <div class="point-item">
+                <span class="point-text">حضور المحاكمات وحراستها إلى النهاية</span>
+                <span class="point-value">+4</span>
+            </div>
+
+            <div class="point-item">
+                <span class="point-text">حراسة بوابة مدينة التدريبات (لكل 30 دقيقة)</span>
+                <span class="point-value">+2</span>
+            </div>
+
+            <div class="point-item">
+                <span class="point-text">حضور الزيارات بشكل مستمر</span>
+                <span class="point-value text-xs" style="min-width: 80px;">مكافأة خاصة</span>
+            </div>
+        </div>
+
+        <!-- الملاحظة -->
+        <div class="note-box">
+            <i class="fa-solid fa-circle-info ml-1 text-green-500"></i>
+            <strong>ملاحظة هامة:</strong> 
+            في حال لم يتم إكمالك لحراسة التدريبات المبدئية إلى نهايتها ولكنك تواجدت لمدة نصف ساعة في حراسة التدريب، يُحسب لك (1) نقطة فقط.
+        </div>
+
+        <!-- تذييل الصفحة -->
+        <div class="p-6">
+            <a href="index.html" class="block text-center py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-xs font-bold text-gray-500 hover:text-white transition">
+                العودة للبوابة الرئيسية
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
