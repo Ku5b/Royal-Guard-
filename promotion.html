@@ -29,9 +29,18 @@
         .field {
             width: 100%; background: #0f0f0f; border: 1px solid #1a1a1a;
             padding: 14px; border-radius: 12px; color: white; font-size: 0.85rem;
-            outline: none; transition: 0.3s;
+            outline: none; transition: 0.3s; appearance: none; /* لإزالة سهم المتصفح الافتراضي في القوائم */
         }
         .field:focus { border-color: #22c55e; background: #111; }
+
+        /* تنسيق خاص لقوائم الاختيار */
+        select.field {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23444'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 12px center;
+            background-size: 16px;
+            padding-left: 40px;
+        }
 
         .submit-btn {
             width: 100%; background: #22c55e; color: white; font-weight: 900;
@@ -56,44 +65,98 @@
             <!-- الاسم -->
             <div class="input-group">
                 <label><i class="fa-solid fa-user ml-1"></i> الاسم في Roblox</label>
-                <input type="text" name="الاسم" class="field" placeholder="مثال: Sultan_511" required>
+                <input type="text" name="الاسم" class="field" required>
             </div>
 
             <!-- الرتبة العسكرية الحالية -->
             <div class="input-group">
                 <label><i class="fa-solid fa-medal ml-1"></i> الرتبة العسكرية الحالية</label>
-                <input type="text" name="الرتبة_الحالية" class="field" placeholder="مثال: ملازم أول" required>
+                <select name="الرتبة_الحالية" class="field" required>
+                    <option value="" disabled selected>اختر رتبتك الحالية</option>
+                    <option>Lieutenant General</option>
+                    <option>Major General</option>
+                    <option>Brigadier</option>
+                    <option>Colonel</option>
+                    <option>Lieutenant Colonel</option>
+                    <option>Major</option>
+                    <option>Captain</option>
+                    <option>First Lieutenant</option>
+                    <option>Second Lieutenant</option>
+                    <option>Warrant Officer Class 1 (WO1)</option>
+                    <option>Warrant Officer Class 2 (WO2)</option>
+                    <option>Staff Sergeant</option>
+                    <option>Sergeant</option>
+                    <option>Corporal</option>
+                    <option>Lance Corporal</option>
+                    <option>Private</option>
+                </select>
             </div>
 
             <!-- اليونت -->
             <div class="input-group">
                 <label><i class="fa-solid fa-shield-halved ml-1"></i> اليونت (القطاع)</label>
-                <input type="text" name="اليونت" class="field" placeholder="مثال: الشرطة العسكرية" required>
+                <input type="text" name="اليونت" class="field" required>
             </div>
 
             <div class="grid grid-cols-2 gap-4">
                 <!-- الرتبة السابقة -->
                 <div class="input-group">
                     <label>الرتبة السابقة</label>
-                    <input type="text" name="الرتبة_السابقة" class="field" placeholder="مثال: ملازم">
+                    <select name="الرتبة_السابقة" class="field">
+                        <option value="" selected>اختر</option>
+                        <option>Lieutenant General</option>
+                        <option>Major General</option>
+                        <option>Brigadier</option>
+                        <option>Colonel</option>
+                        <option>Lieutenant Colonel</option>
+                        <option>Major</option>
+                        <option>Captain</option>
+                        <option>First Lieutenant</option>
+                        <option>Second Lieutenant</option>
+                        <option>Warrant Officer Class 1 (WO1)</option>
+                        <option>Warrant Officer Class 2 (WO2)</option>
+                        <option>Staff Sergeant</option>
+                        <option>Sergeant</option>
+                        <option>Corporal</option>
+                        <option>Lance Corporal</option>
+                        <option>Private</option>
+                    </select>
                 </div>
                 <!-- الرتبة الجديدة -->
                 <div class="input-group">
                     <label>الرتبة المطلوبة</label>
-                    <input type="text" name="الرتبة_الجديدة" class="field" placeholder="مثال: نقيب" required>
+                    <select name="الرتبة_الجديدة" class="field" required>
+                        <option value="" disabled selected>اختر</option>
+                        <option>Lieutenant General</option>
+                        <option>Major General</option>
+                        <option>Brigadier</option>
+                        <option>Colonel</option>
+                        <option>Lieutenant Colonel</option>
+                        <option>Major</option>
+                        <option>Captain</option>
+                        <option>First Lieutenant</option>
+                        <option>Second Lieutenant</option>
+                        <option>Warrant Officer Class 1 (WO1)</option>
+                        <option>Warrant Officer Class 2 (WO2)</option>
+                        <option>Staff Sergeant</option>
+                        <option>Sergeant</option>
+                        <option>Corporal</option>
+                        <option>Lance Corporal</option>
+                        <option>Private</option>
+                    </select>
                 </div>
             </div>
 
             <!-- آخر مدة ترقية -->
             <div class="input-group">
                 <label><i class="fa-solid fa-calendar-days ml-1"></i> تاريخ أو مدة آخر ترقية</label>
-                <input type="text" name="اخر_مدة_ترقية" class="field" placeholder="مثال: قبل شهرين">
+                <input type="text" name="اخر_مدة_ترقية" class="field">
             </div>
 
             <!-- الأعمال المنجزة -->
             <div class="input-group">
                 <label><i class="fa-solid fa-briefcase ml-1"></i> الأعمال المنجزة في القطاع</label>
-                <textarea name="الاعمال_المنجزة" class="field h-28" placeholder="اذكر إنجازاتك التي تستحق عليها الترقية..."></textarea>
+                <textarea name="الاعمال_المنجزة" class="field h-28"></textarea>
             </div>
 
             <button type="submit" class="submit-btn">إرسال الطلب للقيادة</button>
