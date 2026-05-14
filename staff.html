@@ -3,103 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شؤون الأفراد - الحرس الملكي</title>
+    <title>شؤون الأفراد | الحرس الملكي</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Cairo', sans-serif; background: #050505; color: white; min-height: 100vh; }
-        .container { width: 100%; max-width: 450px; padding: 30px 20px; margin: 0 auto; }
+        .container { width: 100%; max-width: 450px; padding: 40px 20px; margin: 0 auto; }
         
-        /* تصميم البطاقات الإدارية */
-        .admin-card {
+        /* تصميم الخانات المتطور */
+        .staff-card {
             background: linear-gradient(145deg, #0f0f0f, #080808);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 22px;
+            border-radius: 24px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             text-decoration: none;
             color: white;
-            transition: 0.3s;
+            transition: 0.3s all ease;
         }
-        .admin-card:hover { border-color: #008000; transform: translateX(-5px); background: #0d0d0d; }
+        .staff-card:hover { 
+            border-color: #22c55e; 
+            transform: translateY(-3px); 
+            background: #0d0d0d; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
 
-        .icon-circle {
-            width: 45px; height: 45px; border-radius: 12px;
+        .icon-box {
+            width: 50px; height: 50px; border-radius: 15px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; margin-left: 15px; background: rgba(255,255,255,0.03);
+            font-size: 1.4rem; margin-left: 18px; 
+            background: rgba(255,255,255,0.02);
         }
 
-        .card-text h3 { font-weight: 700; font-size: 0.95rem; }
-        .card-text p { font-size: 0.7rem; color: #555; }
+        .text-content h3 { font-weight: 800; font-size: 1rem; margin-bottom: 2px; }
+        .text-content p { font-size: 0.75rem; color: #666; }
 
-        .header-staff { text-align: center; margin-bottom: 30px; }
-        .header-staff i { color: #008000; font-size: 2.5rem; margin-bottom: 10px; }
+        .back-btn { color: #444; font-size: 0.8rem; margin-bottom: 30px; display: inline-block; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- زر العودة -->
-        <a href="index.html" class="text-gray-500 text-xs mb-6 inline-block">
+        <!-- العودة للرئيسية -->
+        <a href="index.html" class="back-btn">
             <i class="fa-solid fa-arrow-right ml-1"></i> العودة للرئيسية
         </a>
 
-        <div class="header-staff" data-aos="fade-down">
-            <i class="fa-solid fa-users-gear"></i>
-            <h1 class="text-xl font-black">إدارة شؤون الأفراد</h1>
-            <p class="text-[10px] text-gray-500 tracking-widest uppercase mt-1">Personnel Affairs Department</p>
+        <div class="text-center mb-10">
+            <h1 class="text-2xl font-black">إدارة شؤون الأفراد</h1>
+            <p class="text-green-600 text-[10px] tracking-[3px] uppercase mt-1">Personnel Management System</p>
         </div>
 
-        <!-- الأقسام المطلوبة -->
-        
-        <!-- 1. الكتيب والرتب -->
-        <a href="handbook.html" class="admin-card" data-aos="fade-up">
-            <div class="icon-circle"><i class="fa-solid fa-book-open text-blue-500"></i></div>
-            <div class="card-text">
-                <h3>كتيب المنسوبين والرتب</h3>
-                <p>الدليل الشامل للرتب والمهام العسكرية</p>
+        <!-- 1. طلب الترقية (مرتبط بـ promotion.html) -->
+        <a href="promotion.html" class="staff-card">
+            <div class="icon-box"><i class="fa-solid fa-medal text-yellow-500"></i></div>
+            <div class="text-content">
+                <h3>طلب ترقية عسكرية</h3>
+                <p>تقديم استمارة رفع رتبة للمستحقين</p>
             </div>
         </a>
 
-        <!-- 2. طلب ترقية -->
-        <a href="https://formspree.io/f/xbdwzwkp" class="admin-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-circle"><i class="fa-solid fa-up-long text-green-500"></i></div>
-            <div class="card-text">
-                <h3>تقديم طلب ترقية</h3>
-                <p>رفع استحقاق الترقية للمراجع المختصة</p>
+        <!-- 2. الكتيب والحراسات (مرتبط بـ handbook.html) -->
+        <a href="handbook.html" class="staff-card">
+            <div class="icon-box"><i class="fa-solid fa-book-shield text-blue-500"></i></div>
+            <div class="text-content">
+                <h3>كتيب الحراسات والمهام</h3>
+                <p>دليل المواقع، الحراسات، والتعليمات</p>
             </div>
         </a>
 
-        <!-- 3. الصلاحيات -->
-        <a href="permissions.html" class="admin-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-circle"><i class="fa-solid fa-key text-yellow-500"></i></div>
-            <div class="card-text">
-                <h3>نظام الصلاحيات</h3>
-                <p>صلاحيات الرتب والمناصب القيادية</p>
+        <!-- 3. قاعدة البيانات (مرتبط بـ database.html) -->
+        <a href="database.html" class="staff-card">
+            <div class="icon-box"><i class="fa-solid fa-database text-green-500"></i></div>
+            <div class="text-content">
+                <h3>سجل المنسوبين</h3>
+                <p>قاعدة البيانات المتصلة بجداول جوجل</p>
             </div>
         </a>
 
-        <!-- 4. إدارة القطاع -->
-        <a href="sector-management.html" class="admin-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-circle"><i class="fa-solid fa-sitemap text-red-500"></i></div>
-            <div class="card-text">
-                <h3>إدارة القطاع</h3>
-                <p>الهيكل التنظيمي وتوزيع القوى</p>
+        <!-- 4. إدارة القطاع (مرتبط بـ admin.html المحمي بكلمة سر) -->
+        <a href="admin.html" class="staff-card border-dashed border-zinc-800">
+            <div class="icon-box"><i class="fa-solid fa-user-tie text-red-600"></i></div>
+            <div class="text-content">
+                <h3>إدارة القطاع (للقادة)</h3>
+                <p>تعديل البيانات وإدارة الأنظمة</p>
             </div>
         </a>
 
-        <div class="mt-12 p-4 border border-dashed border-gray-900 rounded-xl text-center">
-            <p class="text-[9px] text-gray-700">ملاحظة: جميع الطلبات تخضع لمراجعة المقدم سلطان السلمي</p>
-        </div>
+        <p class="text-center text-[9px] text-zinc-800 mt-10">نظام إدارة الحرس الملكي © 2026</p>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
 </body>
 </html>
