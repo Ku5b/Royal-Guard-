@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب ترقية عسكرية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background: #000; color: white; padding: 20px; }
+        .form-container { max-width: 500px; margin: 0 auto; background: #050505; padding: 30px; border-radius: 20px; border: 1px solid #111; }
+        .input-style { background: #0a0a0a; border: 1px solid #1a1a1a; width: 100%; padding: 12px; border-radius: 10px; margin-top: 8px; color: white; outline: none; }
+        .input-style:focus { border-color: #22c55e; }
+        .submit-btn { background: #22c55e; color: white; width: 100%; padding: 15px; border-radius: 10px; font-weight: 900; margin-top: 25px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="text-xl font-black text-center mb-6 text-green-600">استمارة طلب ترقية</h2>
+        
+        <!-- استبدل الرابط برابط Formspree الخاص بك -->
+        <form action="https://formspree.io/f/xbdwzwkp" method="POST">
+            <label class="text-sm text-gray-400">الاسم الثلاثي (Roblox):</label>
+            <input type="text" name="الاسم" class="input-style" required>
+
+            <label class="text-sm text-gray-400 mt-4 block">الرتبة الحالية:</label>
+            <input type="text" name="الرتبة_الحالية" class="input-style" required>
+
+            <label class="text-sm text-gray-400 mt-4 block">آخر موعد ترقية (إن وجد):</label>
+            <input type="date" name="تاريخ_آخر_ترقية" class="input-style">
+
+            <label class="text-sm text-gray-400 mt-4 block">الإنجازات أو المبررات للترقية:</label>
+            <textarea name="المبررات" class="input-style h-32" placeholder="اذكر سبب استحقاقك للترقية..."></textarea>
+
+            <button type="submit" class="submit-btn">إرسال الطلب للقيادة</button>
+        </form>
+    </div>
+</body>
+</html>
