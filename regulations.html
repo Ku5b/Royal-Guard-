@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأنظمة والتعليمات | الحرس الملكي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background: #000; color: white; padding: 20px; }
+        .reg-card { max-width: 800px; margin: 0 auto; background: #050505; border-radius: 30px; border: 1px solid #111; overflow: hidden; padding-bottom: 30px; }
+        .header { background: linear-gradient(to bottom, #111, #050505); padding: 30px; border-bottom: 2px solid #22c55e; text-align: center; }
+        
+        /* تنسيق الأكورديون */
+        .accordion-item { border-bottom: 1px solid #111; }
+        .accordion-header { width: 100%; padding: 20px; text-align: right; background: #080808; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; }
+        .accordion-header:hover { background: #0f0f0f; }
+        .accordion-content { display: none; padding: 20px; background: #030303; font-size: 0.85rem; color: #ccc; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.8rem; }
+        th { background: #111; color: #22c55e; padding: 12px; text-align: center; border: 1px solid #1a1a1a; }
+        td { padding: 10px; border: 1px solid #1a1a1a; text-align: center; }
+        
+        .badge-zero { color: #ff4d4d; font-weight: bold; } /* درجة صفر */
+        .badge-one { color: #ff944d; font-weight: bold; } /* درجة أولى */
+        
+        .bl-box { background: rgba(255, 77, 77, 0.05); border: 1px dashed #ff4d4d; padding: 15px; border-radius: 15px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="reg-card">
+        <div class="header">
+            <h1 class="text-2xl font-black italic">اللائحة التنظيمية العامة</h1>
+            <p class="text-green-600 text-[10px] tracking-[3px] uppercase mt-1">Rules & Penalties System</p>
+        </div>
+
+        <!-- القسم الأول: القانون العام -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('general')">
+                <span><i class="fa-solid fa-scale-balanced ml-2 text-green-500"></i> القسم الأول: القانون العام (المواد أ)</span>
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+            <div id="general" class="accordion-content">
+                <table>
+                    <thead>
+                        <tr><th>رقم المادة</th><th>المادة</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1-1</td><td>الالتزام بالزي والمركبة الرسمية المخصصة للدورة.</td></tr>
+                        <tr><td>1-4</td><td>يجب الالتزام بالشخصية العسكرية والانضباط الصارم.</td></tr>
+                        <tr><td>1-15</td><td>وجب الالتزام في نظام المراجع وعدم تخطيه تحت أي ظرف.</td></tr>
+                        <tr><td>1-18</td><td>في حال حراسة رتبة عليا، يمنع اقتراب أي شخص لضمان سلامته.</td></tr>
+                    </tbody>
+                </table>
+                <p class="mt-4 text-[10px] text-gray-500">* ملاحظة: تشمل اللائحة 18 مادة أساسية يجب التقيد بها بالكامل.</p>
+            </div>
+        </div>
+
+        <!-- القسم الثاني: مخالفات الدرجة (0) و (1) -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('level-zero')">
+                <span><i class="fa-solid fa-skull-crossbones ml-2 text-red-600"></i> مخالفات الدرجة (صفر) والدرجة الأولى</span>
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+            <div id="level-zero" class="accordion-content">
+                <div class="mb-4">
+                    <h3 class="badge-zero mb-2">مخالفات الدرجة صفر (الفصل/القائمة السوداء)</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>الخيانة العظمى وتسريب المعلومات.</li>
+                        <li>الكذب على القادة أو الفساد العسكري.</li>
+                        <li>المؤامرة على القادة أو تهريب مطلوبين.</li>
+                    </ul>
+                </div>
+                <hr class="border-zinc-900 my-4">
+                <div>
+                    <h3 class="badge-one mb-2">مخالفات الدرجة الأولى</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>عصيان الأوامر العسكرية المباشرة.</li>
+                        <li>سوء استخدام السلطة أو المركبة.</li>
+                        <li>عدم تمثيل واجهة القطاع بشكل صحيح.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- القسم الثالث: الدرجات الأخرى (2) و (3) -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('level-two')">
+                <span><i class="fa-solid fa-triangle-exclamation ml-2 text-yellow-500"></i> مخالفات الدرجة الثانية والثالثة</span>
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+            <div id="level-two" class="accordion-content">
+                <table>
+                    <thead>
+                        <tr><th>الدرجة الثانية</th><th>الدرجة الثالثة</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>استخدام الصاعق دون سبب</td><td>عدم الالتزام بالزي الرسمي</td></tr>
+                        <tr><td>تخطى نظام المراجع</td><td>إهمال المركبة</td></tr>
+                        <tr><td>مخالفة قواعد التوزيع</td><td>عدم التجاوب مع القيادة</td></tr>
+                        <tr><td>سوء التعامل مع الحالات</td><td>تشغيل أصوات الطوارئ عبثاً</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- القسم الرابع: القائمة السوداء -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('blacklist')">
+                <span><i class="fa-solid fa-user-slash ml-2 text-gray-400"></i> لائحة القائمة السوداء (Blacklist)</span>
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+            <div id="blacklist" class="accordion-content">
+                <div class="bl-box">
+                    <p class="font-bold text-red-500 mb-2">العقوبات المترتبة:</p>
+                    <ul class="space-y-2">
+                        <li>• <strong>أولاً:</strong> زيادة مدة الترقية لكل رتبة (أسبوعين كحد أدنى).</li>
+                        <li>• <strong>ثانياً:</strong> وضع الشخص تحت المراقبة المستمرة.</li>
+                        <li>• <strong>ثالثاً:</strong> تشديد وتضاعف العقوبات والمخالفات لاحقاً.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- زر العودة -->
+        <div class="p-6">
+            <a href="index.html" class="block text-center py-4 bg-zinc-900 border border-zinc-800 rounded-2xl text-xs font-bold text-gray-400 hover:text-white transition uppercase tracking-widest">
+                <i class="fa-solid fa-house ml-2"></i> العودة للبوابة الإدارية
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const allContent = document.querySelectorAll('.accordion-content');
+            
+            allContent.forEach(item => {
+                if (item.id !== id) item.style.display = 'none';
+            });
+
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
